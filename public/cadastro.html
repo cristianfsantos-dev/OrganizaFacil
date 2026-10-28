@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OrganizaFácil</title>
+    <link rel="stylesheet" href="CSS/cadastro.css">
+</head>
+<body>
+    <!-- CADASTRO DE USUÁRIO -->
+    <main id="cadastroUsuario" class="tela">
+        <div class="formulario-cadastro">
+            <div class="cabecalho-formulario">
+
+                <button
+                    class="btn-voltar"
+                    onclick="mostrarTela()">
+                    ← Voltar
+                </button>
+                <h2>Criar conta</h2>
+                <p>
+                    Cadastre-se para começar a organizar suas tarefas.
+                </p>
+
+            </div>
+
+            <form id="formCadastroUsuario">
+
+                <div class="campo">
+                    <label for="nomeUsuario">Nome completo</label>
+
+                    <input
+                        type="text"
+                        id="nomeUsuario"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="emailUsuario">E-mail</label>
+
+                    <input
+                        type="email"
+                        id="emailUsuario"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="senhaUsuario">Senha</label>
+
+                    <input
+                        type="password"
+                        id="senhaUsuario"
+                        placeholder="Crie uma senha"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="confirmarSenhaUsuario">
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmarSenhaUsuario"
+                        placeholder="Digite a senha novamente"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-principal">
+                    Criar conta
+                </button>
+
+            </form>
+
+            <p class="rodape-form">
+                Já possui uma conta?
+                <button onclick="mostrarTela('telaLogin')">
+                    Entrar
+                </button>
+            </p>
+
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OrganizaFácil</title>
+    <link rel="stylesheet" href="CSS/admin.css">
+</head>
+   <!-- CADASTRO DE ADMINISTRADOR -->
+    <main id="cadastroAdmin" class="tela">
+
+        <div class="formulario-cadastro admin">
+
+            <div class="cabecalho-formulario">
+
+                <button
+                    class="btn-voltar"
+                    onclick="mostrarTela()">
+                    ← Voltar
+                </button>
+
+                <h2>Cadastro de Administrador</h2>
+
+                <p>
+                    Cadastre uma conta de administrador do sistema.
+                </p>
+
+            </div>
+
+            <form id="formCadastroAdmin">
+
+                <div class="campo">
+                    <label for  ="nomeAdmin">Nome completo</label>
+
+                    <input
+                        type="text"
+                        id="nomeAdmin"
+                        placeholder="Digite o nome do administrador"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="emailAdmin">E-mail</label>
+
+                    <input
+                        type="email"
+                        id="emailAdmin"
+                        placeholder="Digite o e-mail"
+                        required
+                    >
+                </div>
+                
+                <div class="campo">
+                    <label for="senhaAdmin">Senha</label>
+
+                    <input
+                        type="password"
+                        id="senhaAdmin"
+                        placeholder="Crie uma senha"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="confirmarSenhaAdmin">
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmarSenhaAdmin"
+                        placeholder="Digite a senha novamente"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-principal">
+                    Cadastrar administrador
+                </button>
+
+            </form>
+
+            <p class="rodape-form">
+                Já possui uma conta?
+                <button onclick="mostrarTela('telaLogin')">
+                    Entrar
+                </button>
+            </p>
+
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

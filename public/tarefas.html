@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OrganizaFácil - Minhas Tarefas</title>
+
+    <link rel="stylesheet" href="CSS/tarefas.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="cabecalho">
+
+        <div class="logo">
+
+            <h1>OrganizaFácil</h1>
+
+            <span>
+                Organizador de Tarefas
+            </span>
+
+        </div>
+
+
+        <div class="usuario">
+
+            <span id="nomeUsuario">
+                Carregando...
+            </span>
+
+            <button
+                type="button"
+                onclick="sair()">
+
+                Sair
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main class="container">
+
+
+        <!-- =========================
+             TÍTULO
+        ========================== -->
+
+        <section class="topo">
+
+            <div>
+
+                <h2>
+                    Minhas tarefas
+                </h2>
+
+                <p>
+                    Organize suas atividades e acompanhe seus prazos.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                onclick="abrirNovaTarefa()">
+
+                + Nova tarefa
+
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             ESTATÍSTICAS
+        ========================== -->
+
+        <section class="estatisticas">
+
+
+            <div class="estatistica">
+
+                <span class="icone">
+                    📋
+                </span>
+
+                <div>
+
+                    <span
+                        class="numero"
+                        id="totalTarefas">
+
+                        0
+
+                    </span>
+
+                    <span class="descricao">
+                        Total
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="estatistica">
+
+                <span class="icone">
+                    ⏳
+                </span>
+
+                <div>
+
+                    <span
+                        class="numero"
+                        id="totalPendentes">
+
+                        0
+
+                    </span>
+
+                    <span class="descricao">
+                        Pendentes
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="estatistica">
+
+                <span class="icone">
+                    🔄
+                </span>
+
+                <div>
+
+                    <span
+                        class="numero"
+                        id="totalAndamento">
+
+                        0
+
+                    </span>
+
+                    <span class="descricao">
+                        Em andamento
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="estatistica">
+
+                <span class="icone">
+                    ✅
+                </span>
+
+                <div>
+
+                    <span
+                        class="numero"
+                        id="totalConcluidas">
+
+                        0
+
+                    </span>
+
+                    <span class="descricao">
+                        Concluídas
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PESQUISA E FILTROS
+        ========================== -->
+
+        <section class="filtros">
+
+            <div class="pesquisa">
+
+                <span>
+                    🔎
+                </span>
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Pesquisar tarefas...">
+
+            </div>
+
+
+            <select id="filtroStatus">
+
+                <option value="todas">
+                    Todas
+                </option>
+
+                <option value="pendente">
+                    Pendentes
+                </option>
+
+                <option value="em_andamento">
+                    Em andamento
+                </option>
+
+                <option value="concluida">
+                    Concluídas
+                </option>
+
+            </select>
+
+
+            <select id="filtroPrioridade">
+
+                <option value="todas">
+                    Todas as prioridades
+                </option>
+
+                <option value="alta">
+                    Alta
+                </option>
+
+                <option value="media">
+                    Média
+                </option>
+
+                <option value="baixa">
+                    Baixa
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- =========================
+             LISTA DE TAREFAS
+        ========================== -->
+
+        <section>
+
+            <div
+                id="listaTarefas"
+                class="lista-tarefas">
+            </div>
+
+
+            <div
+                id="mensagemVazia"
+                class="mensagem-vazia">
+
+                <div class="icone-vazio">
+                    📋
+                </div>
+
+                <h3>
+                    Nenhuma tarefa encontrada
+                </h3>
+
+                <p>
+                    Cadastre uma nova tarefa para começar.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         MODAL DE CADASTRO / EDIÇÃO
+    ========================== -->
+
+    <div
+        id="modalTarefa"
+        class="modal escondido">
+
+        <div class="modal-conteudo">
+
+
+            <!-- CABEÇALHO DO MODAL -->
+
+            <div class="modal-cabecalho">
+
+                <h2 id="tituloModal">
+                    Nova tarefa
+                </h2>
+
+                <button
+                    type="button"
+                    id="fecharModal"
+                    class="fechar">
+
+                    ×
+
+                </button>
+
+            </div>
+
+            <!-- FORMULÁRIO -->
+
+            <form id="formTarefa">
+
+
+                <!-- ID DA TAREFA -->
+
+                <input
+                    type="hidden"
+                    id="tarefaId">
+
+
+                <!-- TÍTULO -->
+
+                <div class="campo">
+
+                    <label for="titulo">
+                        Título da tarefa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Ex: Fazer trabalho de programação"
+                        required>
+
+                </div>
+
+
+                <!-- DESCRIÇÃO -->
+
+                <div class="campo">
+
+                    <label for="descricao">
+                        Descrição
+                    </label>
+
+                    <textarea
+                        id="descricao"
+                        placeholder="Descreva a tarefa..."></textarea>
+
+                </div>
+
+
+                <!-- PRAZO E PRIORIDADE -->
+
+                <div class="linha">
+
+
+                    <div class="campo">
+
+                        <label for="prazo">
+                            Prazo
+                        </label>
+
+                        <input
+                            type="date"
+                            id="prazo">
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="prioridade">
+                            Prioridade
+                        </label>
+
+                        <select id="prioridade">
+
+                            <option value="baixa">
+                                Baixa
+                            </option>
+                            <option
+                                value="media"
+                                selected>
+
+                                Média
+                            </option>
+                            <option value="alta">
+                                Alta
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- STATUS -->
+
+                <div
+                    class="campo"
+                    id="campoStatus">
+
+                    <label for="status">
+                        Status
+                    </label>
+
+                    <select id="status">
+
+                        <option value="pendente">
+                            Pendente
+                        </option>
+
+                        <option value="em_andamento">
+                            Em andamento
+                        </option>
+
+                        <option value="concluida">
+                            Concluída
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BOTÕES -->
+
+                <div class="botoes-modal">
+                    <button
+                        type="button"
+                        id="cancelarModal"
+                        class="btn-cancelar">
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn-salvar">
+                        Salvar tarefa
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="JS/tarefas.js"></script>
+</body>
+</html>

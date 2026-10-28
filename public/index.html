@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OrganizaFácil</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- TELA DE LOGIN -->
+
+    <main id="telaLogin" class="tela">
+
+        <div class="container-login">
+
+            <!-- LADO ESQUERDO -->
+
+            <div class="lado-esquerdo">
+
+                <h1>OrganizaFácil</h1>
+
+                <p>
+                    Organize suas tarefas, acompanhe seus prazos
+                    e mantenha seu dia mais organizado.
+                </p>
+
+            </div>
+
+
+            <!-- LADO DIREITO -->
+
+            <div class="lado-direito">
+
+                <div class="form-box">
+
+                    <h2>Entrar</h2>
+
+                    <p class="subtitulo">
+                        Acesse sua conta
+                    </p>
+
+
+                    <!-- FORMULÁRIO DE LOGIN -->
+
+                    <form id="formLogin">
+
+                        <div class="campo">
+
+                            <label for="loginEmail">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                placeholder="Digite seu e-mail"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="loginSenha">
+                                Senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="loginSenha"
+                                placeholder="Digite sua senha"
+                                required
+                            >
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn-principal"
+                        >
+                            Entrar
+                        </button>
+
+                    </form>
+
+                    <!-- OPÇÕES DE CADASTRO -->
+                    <div class="links">
+
+                        <button
+                            type="button"
+                            onclick="irParaCadastro()"
+                        >
+                            Criar conta de usuário
+                        </button>
+
+
+                        <button
+                            type="button"
+                            onclick="irParaAdmin()"
+                        >
+                            Cadastrar administrador
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+# Arquivos de configuração e senhas
+.env
+
+# Dependências do Node.js
+node_modules/
+
+# Logs
+npm-debug.log*

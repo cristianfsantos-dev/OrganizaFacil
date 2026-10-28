@@ -1,0 +1,589 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fb;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.cabecalho {
+    height: 80px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+}
+
+.logo h1 {
+    color: #2563eb;
+    font-size: 26px;
+    margin-bottom: 3px;
+}
+
+.logo span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.usuario span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #334155;
+}
+
+.usuario button {
+    border: none;
+    background: transparent;
+    color: #dc2626;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.usuario button:hover {
+    color: #b91c1c;
+}
+
+
+/* ==============================
+   CONTAINER
+============================== */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+
+/* ==============================
+   TOPO
+============================== */
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.topo h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.topo p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* ==============================
+   BOTÃO NOVA TAREFA
+============================== */
+
+.topo > button {
+    border: none;
+    background: #2563eb;
+    color: white;
+
+    padding: 16px 25px;
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.topo > button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   ESTATÍSTICAS
+============================== */
+
+.estatisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.estatistica {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.icone {
+    font-size: 28px;
+}
+
+.numero {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.descricao {
+    display: block;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+
+/* ==============================
+   FILTROS
+============================== */
+
+.filtros {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.pesquisa {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+
+    padding: 0 15px;
+}
+
+.pesquisa span {
+    margin-right: 10px;
+}
+
+.pesquisa input {
+    width: 100%;
+    height: 45px;
+
+    border: none;
+    outline: none;
+
+    font-size: 15px;
+}
+
+.filtros select {
+    height: 45px;
+    padding: 0 15px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+
+    background: white;
+    color: #334155;
+
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   LISTA DE TAREFAS
+============================== */
+
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ==============================
+   CARD DA TAREFA
+============================== */
+
+.tarefa {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 22px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    border-left: 5px solid #2563eb;
+}
+
+.tarefa h3 {
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.tarefa p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.tarefa-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tarefa-info span {
+    padding: 6px 10px;
+    border-radius: 7px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 12px;
+}
+
+
+/* ==============================
+   BOTÕES DA TAREFA
+============================== */
+
+.acoes-tarefa {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.acoes-tarefa button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 7px;
+
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-editar {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.btn-concluir {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.btn-excluir {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.acoes-tarefa button:hover {
+    opacity: 0.8;
+}
+
+
+/* ==============================
+   MENSAGEM VAZIA
+============================== */
+
+.mensagem-vazia {
+    background: #ffffff;
+    border-radius: 15px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.icone-vazio {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.mensagem-vazia h3 {
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+.mensagem-vazia p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* ==============================
+   MODAL
+============================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal.escondido {
+    display: none;
+}
+
+.modal-conteudo {
+    width: 100%;
+    max-width: 550px;
+
+    background: #ffffff;
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.modal-cabecalho h2 {
+    font-size: 24px;
+    color: #1e293b;
+}
+
+.fechar {
+    border: none;
+    background: transparent;
+
+    font-size: 30px;
+    color: #64748b;
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   CAMPOS DO MODAL
+============================== */
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #334155;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    padding: 12px;
+
+    font-size: 14px;
+    outline: none;
+
+    background: #ffffff;
+}
+
+.campo input,
+.campo select {
+    height: 45px;
+}
+
+.campo textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* ==============================
+   LINHA DO MODAL
+============================== */
+
+.linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+/* ==============================
+   BOTÕES DO MODAL
+============================== */
+
+.botoes-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.btn-cancelar,
+.btn-salvar {
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.btn-salvar {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-salvar:hover {
+    background: #1d4ed8;
+}
+
+
+/* ==============================
+   FORMULÁRIO EXTRA
+============================== */
+
+#formNovaTarefa {
+    display: none;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 850px) {
+
+    .cabecalho {
+        padding: 0 25px;
+    }
+
+    .estatisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filtros {
+        flex-direction: column;
+    }
+
+    .topo {
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .cabecalho {
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .usuario {
+        gap: 10px;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    .topo {
+        flex-direction: column;
+    }
+
+    .topo > button {
+        width: 100%;
+    }
+
+    .estatisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .linha {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-conteudo {
+        padding: 22px;
+    }
+}
